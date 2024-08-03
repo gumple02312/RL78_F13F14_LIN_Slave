@@ -1,0 +1,143 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = D$:\IAR\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = D$:\IAR\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out
+
+rule MAKEBROWSE
+  command = D$:\IAR\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out
+
+rule PDBLINK
+  command = D$:\IAR\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out
+
+
+
+#Build steps
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_cgc.c -xcl_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.xcl -macro_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.tmp -icc_path D$:\IAR\rl78\bin\iccrl78.exe
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_cgc.c --calling_convention v2 --double=32 --core s3 --code_model near --near_const_location rom0 -o D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\Obj\src --dlib_config normal -e -Ol --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_cross_call --no_scheduling --no_clustering --debug --data_model near --predef_macros D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.tmp
+  rspfile_name = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.xcl.rsp
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_cgc_user.c -xcl_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.xcl -macro_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.tmp -icc_path D$:\IAR\rl78\bin\iccrl78.exe
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_cgc_user.c --calling_convention v2 --double=32 --core s3 --code_model near --near_const_location rom0 -o D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\Obj\src --dlib_config normal -e -Ol --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_cross_call --no_scheduling --no_clustering --debug --data_model near --predef_macros D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.tmp
+  rspfile_name = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.xcl.rsp
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_driver.c -xcl_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.xcl -macro_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.tmp -icc_path D$:\IAR\rl78\bin\iccrl78.exe
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_driver.c --calling_convention v2 --double=32 --core s3 --code_model near --near_const_location rom0 -o D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\Obj\src --dlib_config normal -e -Ol --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_cross_call --no_scheduling --no_clustering --debug --data_model near --predef_macros D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.tmp
+  rspfile_name = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.xcl.rsp
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_driver_user.c -xcl_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.xcl -macro_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.tmp -icc_path D$:\IAR\rl78\bin\iccrl78.exe
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_driver_user.c --calling_convention v2 --double=32 --core s3 --code_model near --near_const_location rom0 -o D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\Obj\src --dlib_config normal -e -Ol --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_cross_call --no_scheduling --no_clustering --debug --data_model near --predef_macros D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.tmp
+  rspfile_name = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.xcl.rsp
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_main.c -xcl_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.xcl -macro_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.tmp -icc_path D$:\IAR\rl78\bin\iccrl78.exe
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_main.c --calling_convention v2 --double=32 --core s3 --code_model near --near_const_location rom0 -o D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\Obj\src --dlib_config normal -e -Ol --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_cross_call --no_scheduling --no_clustering --debug --data_model near --predef_macros D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.tmp
+  rspfile_name = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.xcl.rsp
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_port.c -xcl_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.xcl -macro_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.tmp -icc_path D$:\IAR\rl78\bin\iccrl78.exe
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_port.c --calling_convention v2 --double=32 --core s3 --code_model near --near_const_location rom0 -o D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\Obj\src --dlib_config normal -e -Ol --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_cross_call --no_scheduling --no_clustering --debug --data_model near --predef_macros D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.tmp
+  rspfile_name = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.xcl.rsp
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_systeminit.c -xcl_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.xcl -macro_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.tmp -icc_path D$:\IAR\rl78\bin\iccrl78.exe
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_systeminit.c --calling_convention v2 --double=32 --core s3 --code_model near --near_const_location rom0 -o D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\Obj\src --dlib_config normal -e -Ol --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_cross_call --no_scheduling --no_clustering --debug --data_model near --predef_macros D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.tmp
+  rspfile_name = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.xcl.rsp
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_timer.c -xcl_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.xcl -macro_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.tmp -icc_path D$:\IAR\rl78\bin\iccrl78.exe
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_timer.c --calling_convention v2 --double=32 --core s3 --code_model near --near_const_location rom0 -o D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\Obj\src --dlib_config normal -e -Ol --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_cross_call --no_scheduling --no_clustering --debug --data_model near --predef_macros D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.tmp
+  rspfile_name = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.xcl.rsp
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_timer_user.c -xcl_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.xcl -macro_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.tmp -icc_path D$:\IAR\rl78\bin\iccrl78.exe
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_timer_user.c --calling_convention v2 --double=32 --core s3 --code_model near --near_const_location rom0 -o D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\Obj\src --dlib_config normal -e -Ol --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_cross_call --no_scheduling --no_clustering --debug --data_model near --predef_macros D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.tmp
+  rspfile_name = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.xcl.rsp
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_wdt.c -xcl_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.xcl -macro_file D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.tmp -icc_path D$:\IAR\rl78\bin\iccrl78.exe
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_wdt.c --calling_convention v2 --double=32 --core s3 --code_model near --near_const_location rom0 -o D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\Obj\src --dlib_config normal -e -Ol --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_cross_call --no_scheduling --no_clustering --debug --data_model near --predef_macros D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.tmp
+  rspfile_name = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.xcl.rsp
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.pbi : INDEXER D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.xcl |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_cgc.c
+  flags = -out=D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.pbi -f D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.xcl
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.pbi : INDEXER D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.xcl |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_cgc_user.c
+  flags = -out=D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.pbi -f D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.xcl
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.pbi : INDEXER D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.xcl |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_driver.c
+  flags = -out=D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.pbi -f D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.xcl
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.pbi : INDEXER D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.xcl |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_driver_user.c
+  flags = -out=D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.pbi -f D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.xcl
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.pbi : INDEXER D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.xcl |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_main.c
+  flags = -out=D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.pbi -f D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.xcl
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.pbi : INDEXER D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.xcl |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_port.c
+  flags = -out=D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.pbi -f D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.xcl
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.pbi : INDEXER D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.xcl |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_systeminit.c
+  flags = -out=D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.pbi -f D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.xcl
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.pbi : INDEXER D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.xcl |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_timer.c
+  flags = -out=D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.pbi -f D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.xcl
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.pbi : INDEXER D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.xcl |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_timer_user.c
+  flags = -out=D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.pbi -f D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.xcl
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.pbi : INDEXER D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.xcl |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\src\RLIN_wdt.c
+  flags = -out=D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.pbi -f D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.xcl
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave.pbw : MAKEBROWSE D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave.pbd
+  flags = D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave.pbd -output D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave.pbw
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part0.pbi : PDBLINK D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.pbi |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.pbi $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.pbi
+  flags = -M D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part0.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_cgc_user.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver.pbi
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part1.pbi : PDBLINK D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.pbi |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.pbi $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.pbi
+  flags = -M D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part1.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_driver_user.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_main.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_port.pbi
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part2.pbi : PDBLINK D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.pbi |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.pbi $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.pbi
+  flags = -M D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part2.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_systeminit.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_timer_user.pbi
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part3.pbi : PDBLINK D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.pbi
+  flags = -M D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part3.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\src\RLIN_wdt.pbi
+
+build D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave.pbd : PDBLINK D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part0.pbi |  $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part1.pbi $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part2.pbi $
+D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part3.pbi
+  flags = -M D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave.pbd D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part0.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part1.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part2.pbi D$:\stellantis\LIN\code\an_r01an1840ed0102_rl78f13f14_lin\RL78_F13F14_LIN_Slave\Debug\BrowseInfo\RL78_RLIN_Slave_part3.pbi
+

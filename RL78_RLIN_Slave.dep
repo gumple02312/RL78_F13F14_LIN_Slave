@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>99939979</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\src\RLIN_timer.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\src\RLIN_driver.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\src\RLIN_main.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\src\RLIN_driver_user.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\src\RLIN_cgc_user.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\src\RLIN_port.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\src\RLIN_wdt.o</file>
+            <file>$PROJ_DIR$\src\RLIN_cgc.c</file>
+            <file>$PROJ_DIR$\src\RLIN_driver_user.c</file>
+            <file>$PROJ_DIR$\src\RLIN_systeminit.c</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\src\RLIN_cgc.h</file>
+            <file>$PROJ_DIR$\src\RLIN_macrodriver.h</file>
+            <file>$PROJ_DIR$\src\RLIN_driver.c</file>
+            <file>$PROJ_DIR$\src\RLIN_main.c</file>
+            <file>$PROJ_DIR$\src\RLIN_port.c</file>
+            <file>$PROJ_DIR$\src\RLIN_timer_user.c</file>
+            <file>$PROJ_DIR$\src\RLIN_wdt.c</file>
+            <file>$PROJ_DIR$\src\RLIN_cgc_user.c</file>
+            <file>$PROJ_DIR$\src\RLIN_timer.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\src\RLIN_cgc.o</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\lib\dbgrlnnf23nd.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\src\RLIN_systeminit.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\src\RLIN_timer.o</file>
+            <file>$PROJ_DIR$\Debug\Exe\RL78_RLIN_Slave.out</file>
+            <file>$PROJ_DIR$\src\RLIN_userdefine.h</file>
+            <file>$TOOLKIT_DIR$\inc\ior5f10ppj_ext.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\src\RLIN_timer_user.o</file>
+            <file>$TOOLKIT_DIR$\lib\dlrlnnf23n.a</file>
+            <file>$PROJ_DIR$\src\RLIN_port.h</file>
+            <file>$TOOLKIT_DIR$\config\lnkr5f10bmg.icf</file>
+            <file>$TOOLKIT_DIR$\lib\hwmulrl3.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$PROJ_DIR$\src\RLIN_driver.h</file>
+            <file>$PROJ_DIR$\src\RLIN_wdt.h</file>
+            <file>$TOOLKIT_DIR$\inc\ior5f10ppj.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$PROJ_DIR$\Debug\List\RL78_RLIN_Slave.map</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\src\RLIN_cgc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 21</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 13 40 29 22 37 3 30 11 41 31 23 12 28</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RLIN_driver_user.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 4</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 13 40 29 22 37 3 30 11 41 31 23 38 28</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RLIN_systeminit.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 25</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 13 40 29 22 37 3 30 11 41 31 23 12 34 0 39 38 28</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RLIN_driver.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 1</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 13 40 29 22 37 3 30 11 41 31 23 38 28</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RLIN_main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 2</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 13 40 29 22 37 3 30 11 41 31 23 12 34 0 39 38 28</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RLIN_port.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 13 40 29 22 37 3 30 11 41 31 23 34 28</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RLIN_timer_user.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 32</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 13 40 29 22 37 3 30 11 41 31 23 0 38 28</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RLIN_wdt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 7</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 13 40 29 22 37 3 30 11 41 31 23 39 28</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RLIN_cgc_user.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 5</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 13 40 29 22 37 3 30 11 41 31 23 12 28</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RLIN_timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 26</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCRL78</name>
+                    <file> 13 40 29 22 37 3 30 11 41 31 23 0 28</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 42 27</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\RL78_RLIN_Slave.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 42</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 35 21 5 1 4 2 6 25 26 32 7 24 36 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>
