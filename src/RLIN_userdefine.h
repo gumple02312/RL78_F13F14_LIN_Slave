@@ -92,6 +92,13 @@ User definitions
 #define TRUE   1
 #define FALSE  0
 
-#define RLIN_DateBuffer     0x06D8
+#define DateBuffer_1     0x06D8
+#define DateBuffer_2     0x06D9
+#define DateBuffer_3     0x06DA
+#define DateBuffer_4     0x06DB
+#define DateBuffer_5     0x06DC
+#define DateBuffer_6     0x06DD
+#define DateBuffer_7     0x06DE
+#define DateBuffer_8     0x06DF
 
 #endif

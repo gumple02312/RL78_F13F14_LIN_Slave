@@ -477,7 +477,7 @@ SECUR_ID$$Base              0xc4          --   Gb  - Linker created -
 SECUR_ID$$Limit             0xce          --   Gb  - Linker created -
 _Clear_DataBuffer          0x18d   0x16  Code  Gb  RLIN_driver.o [1]
 _GetIDbuffer            0xf'df1a    0x1  Data  Gb  RLIN_driver_user.o [1]
-_Get_reponse_RxData        0x1a3   0x29  Code  Gb  RLIN_driver.o [1]
+_Get_response_RxData        0x1a3   0x29  Code  Gb  RLIN_driver.o [1]
 _NEAR_CONST_LOCATION {Abs}
                              0x0         Data  Gb  <internal module>
 _RLIN0_Reception_interrupt

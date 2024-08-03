@@ -96330,21 +96330,21 @@
     "scope": null
   },
   {
-    "ID": "c:@F@Get_reponse_RxData",
+    "ID": "c:@F@Get_response_RxData",
     "What": "Function",
     "defdec": "Def",
-    "display": "uint8_t Get_reponse_RxData(uint8_t *)",
+    "display": "uint8_t Get_response_RxData(uint8_t *)",
     "location": {
       "column": "10",
       "line": "206",
       "path": "D:\\stellantis\\LIN\\code\\an_r01an1840ed0102_rl78f13f14_lin\\RL78_F13F14_LIN_Slave\\src\\RLIN_driver.c"
     },
-    "name": "Get_reponse_RxData",
+    "name": "Get_response_RxData",
     "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:RLIN_driver.c@11960@F@Get_reponse_RxData@i",
+    "ID": "c:RLIN_driver.c@11960@F@Get_response_RxData@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
@@ -96358,7 +96358,7 @@
     "scope": null
   },
   {
-    "ID": "c:RLIN_driver.c@11960@F@Get_reponse_RxData@k",
+    "ID": "c:RLIN_driver.c@11960@F@Get_response_RxData@k",
     "What": "Variable",
     "defdec": "Dec",
     "display": "k",
@@ -96372,7 +96372,7 @@
     "scope": null
   },
   {
-    "ID": "c:RLIN_driver.c@11976@F@Get_reponse_RxData@Databuf_adr",
+    "ID": "c:RLIN_driver.c@11976@F@Get_response_RxData@Databuf_adr",
     "What": "Variable",
     "defdec": "Def",
     "display": "Databuf_adr",
@@ -97128,30 +97128,30 @@
     "scope": null
   },
   {
-    "ID": "c:@F@Get_reponse_RxData",
+    "ID": "c:@F@Get_response_RxData",
     "What": "Function",
     "defdec": "Dec",
-    "display": "uint8_t Get_reponse_RxData(uint8_t *)",
+    "display": "uint8_t Get_response_RxData(uint8_t *)",
     "location": {
       "column": "9",
       "line": "78",
       "path": "D:\\stellantis\\LIN\\code\\an_r01an1840ed0102_rl78f13f14_lin\\RL78_F13F14_LIN_Slave\\src\\RLIN_driver.h"
     },
-    "name": "Get_reponse_RxData",
+    "name": "Get_response_RxData",
     "origin": "user_include",
     "scope": null
   },
   {
-    "ID": "c:@F@Get_reponse_RxData",
+    "ID": "c:@F@Get_response_RxData",
     "What": "Function",
     "defdec": "Dec",
-    "display": "uint8_t Get_reponse_RxData(uint8_t *)",
+    "display": "uint8_t Get_response_RxData(uint8_t *)",
     "location": {
       "column": "9",
       "line": "78",
       "path": "D:\\stellantis\\LIN\\code\\an_r01an1840ed0102_rl78f13f14_lin\\RL78_F13F14_LIN_Slave\\src\\RLIN_driver.h"
     },
-    "name": "Get_reponse_RxData",
+    "name": "Get_response_RxData",
     "origin": "user_include",
     "scope": null
   },
@@ -105684,16 +105684,16 @@
     "scope": null
   },
   {
-    "ID": "c:RLIN_driver_user.c@7253@F@RLIN0_Reception_interrupt@receive_reponse_flag",
+    "ID": "c:RLIN_driver_user.c@7253@F@RLIN0_Reception_interrupt@receive_response_flag",
     "What": "Variable",
     "defdec": "Def",
-    "display": "receive_reponse_flag",
+    "display": "receive_response_flag",
     "location": {
       "column": "11",
       "line": "115",
       "path": "D:\\stellantis\\LIN\\code\\an_r01an1840ed0102_rl78f13f14_lin\\RL78_F13F14_LIN_Slave\\src\\RLIN_driver_user.c"
     },
-    "name": "receive_reponse_flag",
+    "name": "receive_response_flag",
     "origin": "project_file",
     "scope": null
   },

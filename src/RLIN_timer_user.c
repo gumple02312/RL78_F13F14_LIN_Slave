@@ -89,10 +89,7 @@ Includes
 #pragma vector = INTTM00_vect
 __interrupt static void r_tau0_channel0_interrupt(void)
 {
-
-
      R_TAU0_Channel0_Stop();     
      RLIN_Slave_HeaderReceive();   /* Ready for receive header frame by slave node */
-  
 }
 

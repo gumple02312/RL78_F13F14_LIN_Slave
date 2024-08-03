@@ -112,9 +112,9 @@ __interrupt static void RLIN0_Reception_interrupt(void)
 
 
   uint8_t receive_header_flag;
-  uint8_t receive_reponse_flag;
+  uint8_t receive_response_flag;
   receive_header_flag=LST0 & 0x80;          /* get header reception flag */
-  receive_reponse_flag=LST0 & 0X02;         /* get response rception flag*/
+  receive_response_flag=LST0 & 0X02;         /* get response rception flag*/
 
     
 GetIDbuffer=LIDB0;
@@ -141,18 +141,18 @@ switch(GetIDbuffer)
 LIE0 |= 0x80;   /*enable header reception interrupt*/
 }
   
-if(receive_reponse_flag)
+if(receive_response_flag)
 {
   LIE0 &= 0xFD;      /* disable response reception interrupt*/
   LST0 &= 0xFD;      /* clear response reception successful flag*/
   
   switch(GetIDbuffer)
 {
-  case 0x08:  P6 = Get_reponse_RxData(Slave_RxData1);            
+  case 0x08:  P6 = Get_response_RxData(Slave_RxData1);            
               break;
-  case 0x49:  P6 = Get_reponse_RxData(Slave_RxData2);              
+  case 0x49:  P6 = Get_response_RxData(Slave_RxData2);              
               break;
-  case 0xCA:  P6 = Get_reponse_RxData(Slave_RxData3);             
+  case 0xCA:  P6 = Get_response_RxData(Slave_RxData3);             
               break;
 default: break;
 }

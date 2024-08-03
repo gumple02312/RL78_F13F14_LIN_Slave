@@ -75,7 +75,7 @@
 #include "RLIN_userdefine.h"
 
 void Clear_DataBuffer(void);
-uint8_t Get_reponse_RxData(uint8_t * RxData);
+uint8_t Get_response_RxData(uint8_t * RxData);
 void RLIN_Slave_Init(void);      /* init Slave RLIN0*/
 void RLIN_Slave_HeaderReceive(void);
 void RLIN_Slave_Transmit(uint8_t* databuf,uint8_t Data_length);

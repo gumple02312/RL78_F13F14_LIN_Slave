@@ -65,131 +65,84 @@
 /*===========================================================================*/
 
 /***********************************************************************************************************************
-* File Name    : RLIN_driver_user.c
-* Device(s)    : R5F10PPJ
-* Tool-Chain   : IAR Systems iccrl78
-* Description  : This file implements device driver for Interrupt module.
-* Creation Date: 02.08.2013
-***********************************************************************************************************************/
+ * File Name    : RLIN_driver_user.c
+ * Device(s)    : R5F10PPJ
+ * Tool-Chain   : IAR Systems iccrl78
+ * Description  : This file implements device driver for Interrupt module.
+ * Creation Date: 02.08.2013
+ ***********************************************************************************************************************/
 
 #include "RLIN_macrodriver.h"
 #include "RLIN_driver.h"
 #include "RLIN_userdefine.h"
+#include "LIN.h"
 
 uint8_t GetIDbuffer;
-uint8_t Slave_RxData1[8];            /*reception data store array*/
-uint8_t Slave_RxData2[8];            /*reception data store array*/
-uint8_t Slave_RxData3[8];            /*reception data store array*/
-uint8_t Slave_TxData[]={0x55,0xC0};  /*Transmission data store array*/
-
-
-
 
 /***********************************************************************************************************************
-* Function Name: RLIN0_Transmission_interrupt
-* Description  : This function is RLIN0 Transmission interrupt service routine.
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
+ * Function Name: RLIN0_Transmission_interrupt
+ * Description  : This function is RLIN0 Transmission interrupt service routine.
+ * Arguments    : None
+ * Return Value : None
+ ***********************************************************************************************************************/
 #pragma vector = INTLIN0TRM_vect
 __interrupt static void RLIN0_Transmission_interrupt(void)
 {
-    
-  LST0&=0xFE; 
 
+    LST0 &= 0xFE;
 }
 
-
 /***********************************************************************************************************************
-* Function Name: RLIN0_Reception_interrupt
-* Description  : This function is RLIN0 Reception interrupt service routine.
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
+ * Function Name: RLIN0_Reception_interrupt
+ * Description  : This function is RLIN0 Reception interrupt service routine.
+ * Arguments    : None
+ * Return Value : None
+ ***********************************************************************************************************************/
 #pragma vector = INTLIN0RVC_vect
 __interrupt static void RLIN0_Reception_interrupt(void)
-{  
-
-
-  uint8_t receive_header_flag;
-  uint8_t receive_reponse_flag;
-  receive_header_flag=LST0 & 0x80;          /* get header reception flag */
-  receive_reponse_flag=LST0 & 0X02;         /* get response rception flag*/
-
-    
-GetIDbuffer=LIDB0;
-
-if(receive_header_flag)  /* Header successful receive*/
 {
-  /* LIE0&=0xF7; */    /*Disable header interrupt*/ /*revision 1.01*/
-  LST0&=0X7F;    /*clear successful header reception flag*/
- 
-switch(GetIDbuffer)
-{
-   case 0x08: RLIN_Slave_Receive(3);
-           break;
-  case 0x49: RLIN_Slave_Receive(3);
-           break;
-  case 0xCA: RLIN_Slave_Receive(3);
-           break;
-  case 0x8B: RLIN_Slave_Transmit(Slave_TxData,2);
-             P6=Slave_TxData[1];
-           break;  
- default:   RLIN_Slave_NoResponse();
-           break;
-}
-/*LIE0 |= 0x80; */  /*enable header reception interrupt*//*revision 1.01*/
-}
-  
-if(receive_reponse_flag)
-{
-  /*LIE0 &= 0xFD; */      /* disable response reception interrupt*//*revision 1.01*/
-  LST0 &= 0xFD;      /* clear response reception successful flag*/
-  
-  switch(GetIDbuffer)
-{
-  case 0x08:  P6 = Get_reponse_RxData(Slave_RxData1);            
-              break;
-  case 0x49:  P6 = Get_reponse_RxData(Slave_RxData2);              
-              break;
-  case 0xCA:  P6 = Get_reponse_RxData(Slave_RxData3);             
-              break;
-default: break;
-}
 
-  /*LIE0|=0x02; */  /*enable reception interrupt*//*revision 1.01*/
-}
-LTRC0=0x01;    /*enabled header reception interrupt*/
+    uint8_t receive_header_flag;
+    uint8_t receive_response_flag;
+    receive_header_flag = LST0 & 0x80;   /* get header reception flag */
+    receive_response_flag = LST0 & 0X02; /* get response rception flag*/
+
+    GetIDbuffer = LIDB0;
+    void Slave_ID_Switch(GetIDbuffer, receive_header_flag, receive_response_flag)
 }
 
 /***********************************************************************************************************************
-* Function Name: RLIN0_Status_interrupt
-* Description  : This function is RLIN0 Status interrupt service routine.
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
-
+ * Function Name: RLIN0_Status_interrupt
+ * Description  : This function is RLIN0 Status interrupt service routine.
+ * Arguments    : None
+ * Return Value : None
+ ***********************************************************************************************************************/
 #pragma vector = INTLIN0_vect
 __interrupt static void RLIN0_Status_interrupt(void)
 {
-while(1U)
-{
-  ;
-}
-}
+    //   uint8_t error_type
 
-
+    //   error_type = Get_ErrorType();
+    //   switch (err0r_type)
+    //   {
+    //     case 0:
+    //   }
+    while (1U)
+    {
+        ;
+    }
+}
 
 /***********************************************************************************************************************
-* Function Name: RLIN0_Wakeup_interrupt
-* Description  : This function is RLIN0 Wakeup interrupt service routine.
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
+ * Function Name: RLIN0_Wakeup_interrupt
+ * Description  : This function is RLIN0 Wakeup interrupt service routine.
+ * Arguments    : None
+ * Return Value : None
+ ***********************************************************************************************************************/
 #pragma vector = INTLIN0WUP_vect
 __interrupt static void RLIN0_Wakeup_interrupt(void)
 {
- LCUC0=0x03;
- LED1=ON; 
- LED2=ON;
+    LCUC0 = 0x03;
+    LED1 = ON;
+    LED2 = ON;
 }
